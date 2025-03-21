@@ -1095,52 +1095,71 @@ header.main-header .header-sticky.active{
 /***        05. CTA Box css	      ***/
 /************************************/
 
-.cta-box{
-	background-color: var(--primary-color);
-	padding: 50px 0;
+.cta-box {
+    background-color: var(--primary-color);
+    padding: 50px 0;
 }
 
-.cta-box-item{
-	display: flex;
-	align-items: center;
-	border-right: 1px solid var(--divider-color);
-	margin-right: 15px;
-	padding-right: 15px;
+.cta-box-item {
+    display: flex;
+    align-items: center;
+    border-right: 1px solid var(--divider-color);
+    padding-right: 15px;
 }
 
-.cta-box .col-lg-4:nth-child(2) .cta-box-item{
-	border: none;
-	padding-right: 0;
-	margin-right: 0;
+/* Remove border from last column */
+.cta-box .col-auto:last-child .cta-box-item {
+    border: none;
+    padding-right: 0;
 }
 
-.cta-box-item .icon-box{
-	margin-right: 20px;
+/* Icon Styling */
+.cta-box-item .icon-box {
+    margin-right: 15px;
 }
 
-.cta-box-item .icon-box img{
-	max-width: 40px;
+.cta-box-item .icon-box img {
+    max-width: 40px;
 }
 
-.cta-box-content{
-	width: calc(100% - 60px);
+/* Dynamic content area */
+.cta-box-content {
+    flex-grow: 1;
 }
 
-.cta-box-content h3{
-	font-size: 20px;
-	font-weight: 600;
-	text-transform: capitalize;
-	color:  var(--white-color);
-	margin-bottom: 10px;
+.cta-box-content h3 {
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: capitalize;
+    color: var(--white-color);
+    margin-bottom: 5px;
 }
 
-.cta-box-content p{
-	color: var(--white-color);
-	margin: 0;
+.cta-box-content p {
+    color: var(--white-color);
+    margin: 0;
 }
 
-.cta-box-btn{
-	text-align: right;
+/* Centering the Appointment Button */
+.cta-box-btn {
+    text-align: center;
+    width: 100%;
+}
+
+/* Media Query for Small Screens (Mobile Devices) */
+@media (max-width: 767px) {
+    .cta-box .row {
+        flex-direction: column;  /* Stack columns vertically */
+    }
+    .cta-box .col-auto,
+    .cta-box .col {
+        width: 100%;  /* Ensure each column takes full width on small screens */
+        padding: 0 0 15px 15px;  /* Add space between columns */
+        border-right: none;  /* Remove the border for mobile */
+    }
+    .cta-box .cta-box-item {
+        padding-right: 0;  /* Reset padding for small screens */
+    }
 }
 
 /************************************/
